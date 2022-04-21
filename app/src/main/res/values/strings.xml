@@ -3,5 +3,6 @@
     <string name="scroll_txt">Scroll area</string>
     <string name="next_txt">Вперёд</string>
     <string name="back_txt">Назад</string>
+    <string name="country_txt">Страна: </string>
     <string name="title_1">Озорная Такаги: Водные горки</string>
 </resources>

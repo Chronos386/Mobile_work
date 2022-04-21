@@ -7,7 +7,7 @@ class AnimeDataFromNetwork {
     private val request = Request.Builder()
     var str: String = ""
 
-    fun getAnimeList (page: Int){
+    fun getAnimeList (page: Long){
         request.url("https://kinopoiskapiunofficial.tech/api/v2.2/films?countries=16&genres=24&order=RATING&type=ALL&ratingFrom=0&ratingTo=10&yearFrom=1000&yearTo=3000&page=$page")
             .header("X-API-KEY", "8c8e1a50-6322-4135-8875-5d40a5420d86")
             .addHeader("accept", "application/json")
