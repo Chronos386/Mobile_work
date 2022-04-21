@@ -7,10 +7,9 @@ import com.example.lab_2_anime.findViewById
 import com.example.lab_2_anime.refrashList
 
 
-class MyButtons(private val id_cont: Int, private val id_butt_1: Int, private val id_butt_2: Int, cont: Context) {
+class MyButtons(private val id_butt_1: Int, private val id_butt_2: Int, cont: Context) {
     private var butt1 = Button(cont)
     private var butt2 = Button(cont)
-        //act
 
     fun InitButt(films: FilmsArray, MyView: findViewById, frash: refrashList){
         butt1 = MyView.findView(id_butt_1)

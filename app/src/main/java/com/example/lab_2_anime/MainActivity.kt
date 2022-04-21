@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val pop = MyButtons(R.layout.activity_main, R.id.button1, R.id.button0, this)
+        val pop = MyButtons(R.id.button1, R.id.button0, this)
         (application as MainApp).appComponent.inject(this)
         val t = Thread(Runnable {
             films.getNetListAnimePage()
