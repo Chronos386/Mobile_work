@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Lab_2_Anime</string>
+    <string name="scroll_txt">Scroll area</string>
+    <string name="next_txt">Вперёд</string>
+    <string name="back_txt">Назад</string>
+    <string name="title_1">Озорная Такаги: Водные горки</string>
+</resources>
