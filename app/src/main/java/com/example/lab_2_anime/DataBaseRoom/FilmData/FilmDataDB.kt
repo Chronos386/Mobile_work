@@ -1,0 +1,50 @@
+package com.example.lab_2_anime.DataBaseRoom.FilmData
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity
+data class FilmDataDB (
+    @PrimaryKey val id: Int,
+    val kinopoiskID: Long,
+    val imdbID: String? = null,
+    val nameRu: String? = null,
+    val nameEn: String? = null,
+    val nameOriginal: String? = null,
+    val posterURL: String? = null,
+    val posterURLPreview: String? = null,
+    val coverURL: String? = null,
+    val reviewsCount: Long? = null,
+    val ratingGoodReview: Double? = null,
+    val ratingGoodReviewVoteCount: Long? = null,
+    val ratingKinopoisk: Double? = null,
+    val ratingKinopoiskVoteCount: Long? = null,
+    val ratingImdb: Double? = null,
+    val ratingImdbVoteCount: Double? = null,
+    val ratingFilmCritics: Double? = null,
+    val ratingFilmCriticsVoteCount: Double? = null,
+    val ratingAwait: Double? = null,
+    val ratingAwaitCount: Double? = null,
+    val ratingRFCritics: Double? = null,
+    val ratingRFCriticsVoteCount: Long? = null,
+    val webURL: String? = null,
+    val year: Long? = null,
+    val filmLength: Long? = null,
+    val slogan: String? = null,
+    val description: String? = null,
+    val shortDescription: String? = null,
+    val editorAnnotation: String? = null,
+    val isTicketsAvailable: Boolean? = null,
+    val productionStatus: String? = null,
+    val type: String? = null,
+    val ratingMPAA: String? = null,
+    val ratingAgeLimits: String? = null,
+
+    val startYear: Long? = null,
+    val endYear: Long? = null,
+    val serial: Boolean? = null,
+    val shortFilm: Boolean? = null,
+    val completed: Boolean? = null,
+    val hasImax: Boolean? = null,
+    val has3D: Boolean? = null,
+    val lastSync: String? = null
+)

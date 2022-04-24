@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.text.SpannableStringBuilder
 import androidx.core.text.bold
 import com.example.lab_2_anime.DataSource.FilmData
+import com.example.lab_2_anime.interf_components.downloadImage
 import kotlinx.android.synthetic.main.activity_anime_page.*
 
 class AnimePageActivity : AppCompatActivity() {

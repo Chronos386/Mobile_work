@@ -4,11 +4,12 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.lab_2_anime.Adapters.SpisAdapter3
 import com.example.lab_2_anime.DataFrom.AnimeDataFromNetwork
 import com.example.lab_2_anime.DataFrom.FilmsArray
 import com.example.lab_2_anime.DataSource.FilmData
 import com.example.lab_2_anime.DataSource.ListItem
-import com.example.lab_2_anime.interf_components.MyButtons
+import com.example.lab_2_anime.interf_components.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.*
 import javax.inject.Inject
@@ -17,18 +18,31 @@ import javax.inject.Inject
 class MainActivity : AppCompatActivity() {
     @Inject lateinit var netHelp: AnimeDataFromNetwork
     @Inject lateinit var films: FilmsArray
+
+    //Попытки работать с базой данных через Dagger (не вышло, потому что везде требуется контекст, а при его передаче ломается куча всего другого)
+    /*@Inject lateinit var database: AppDataBase
+    var mainActivityComponent: AppComponent = DaggerAppComponent.builder()
+        .mainActivityModule(MainActivityModule(this))
+        .build()*/
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val pop = MyButtons(R.id.button1, R.id.button0, this)
+        //Такое объявление работает
+        /*val datamydata = Room.databaseBuilder(
+            this,
+            AppDataBase::class.java,
+            "myDataBase"
+        ).build()*/
+        val myBttns = MyButtons(R.id.button1, R.id.button0, this)
         (application as MainApp).appComponent.inject(this)
         val t = Thread(Runnable {
             films.getNetListAnimePage()
-            pop.InitButt(films, object : findViewById {
+            myBttns.initButt(films, object : FindViewById {
                 override fun findView(id: Int): Button {
                     return findViewById(id)
                 }
-            }, object : refrashList {
+            }, object : RefrashList {
                 override fun smenPage() {
                     refreshList()
                 }
@@ -45,7 +59,7 @@ class MainActivity : AppCompatActivity() {
         val linearLayoutManager = LinearLayoutManager(applicationContext)
         linearLayoutManager.orientation = LinearLayoutManager.VERTICAL
         SpisRV.layoutManager = linearLayoutManager
-        val adapter = SpisAdapter3(this, films.getArr(), object : GoToAnime3{
+        val adapter = SpisAdapter3(this, films.getArr(), object : GoToAnime3 {
             override fun onClicked(tag: ListItem) {
                 goToAnime(tag)
             }

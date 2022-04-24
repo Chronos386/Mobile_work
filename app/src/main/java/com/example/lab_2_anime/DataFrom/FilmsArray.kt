@@ -12,7 +12,9 @@ class FilmsArray {
     lateinit var netHelp: AnimeDataFromNetwork
 
     fun getNetListAnimePage() {
-        DaggerAppComponent.create().inject_func(this)
+        DaggerAppComponent.builder()
+            .build()
+            .inject_func(this)
         netHelp.getAnimeList(listPage)
         array.clear()
         val topPage = netHelp.str.let { FilmList.fromJson(it) }

@@ -1,4 +1,4 @@
-package com.example.lab_2_anime
+package com.example.lab_2_anime.Adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,11 +8,14 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lab_2_anime.DataSource.ListItem
+import com.example.lab_2_anime.interf_components.GoToAnime3
+import com.example.lab_2_anime.R
 import com.squareup.picasso.Picasso
 
 
 class SpisAdapter3(private val context: Context, private val list: ArrayList<ListItem>,
-                   private val MyOnClick: GoToAnime3) :
+                   private val MyOnClick: GoToAnime3
+) :
     RecyclerView.Adapter<SpisAdapter3.MyViewHolder>() {
     inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val spisTitle: TextView = view.findViewById<View>(R.id.row_title) as TextView

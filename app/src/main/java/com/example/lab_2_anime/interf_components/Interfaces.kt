@@ -1,19 +1,20 @@
-package com.example.lab_2_anime
+package com.example.lab_2_anime.interf_components
 
 import android.widget.Button
 import android.widget.ImageView
 import com.example.lab_2_anime.DataSource.ListItem
+import com.example.lab_2_anime.R
 import com.squareup.picasso.Picasso
 
 interface GoToAnime3 {
     fun onClicked(tag: ListItem)
 }
 
-interface refrashList {
+interface RefrashList {
     fun smenPage()
 }
 
-interface findViewById {
+interface FindViewById {
     fun findView(id: Int): Button
 }
 
