@@ -1,5 +1,4 @@
 package com.example.lab_2_anime.DataSource
-
 import com.beust.klaxon.Klaxon
 private val klaxon = Klaxon()
 

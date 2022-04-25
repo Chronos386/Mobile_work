@@ -26,6 +26,12 @@ class FilmsArray {
         }
     }
 
+    fun getDataBaseListPage(myDataBase: AnimeDataFromDB) {
+        pageCount = myDataBase.getPageCount().toLong()
+        array.clear()
+        array = myDataBase.getSomeList(listPage.toInt())
+    }
+
     fun getArr(): ArrayList<ListItem>{
         return array
     }

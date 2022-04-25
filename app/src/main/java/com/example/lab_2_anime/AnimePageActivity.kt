@@ -6,6 +6,7 @@ import android.text.SpannableStringBuilder
 import androidx.core.text.bold
 import com.example.lab_2_anime.DataSource.FilmData
 import com.example.lab_2_anime.interf_components.downloadImage
+import com.example.lab_2_anime.interf_components.isOnline
 import kotlinx.android.synthetic.main.activity_anime_page.*
 
 class AnimePageActivity : AppCompatActivity() {
@@ -18,7 +19,9 @@ class AnimePageActivity : AppCompatActivity() {
 
     private fun createPage(item: FilmData){
         var pr = 0
-        downloadImage(item.posterURL.toString(), image_anime)
+        if(isOnline(this)) {
+            downloadImage(item.posterURL.toString(), image_anime)
+        }
         rating.text = item.ratingKinopoisk.toString()
         val str: String = item.ratingAgeLimits.toString()
         if(item.ratingAgeLimits != null)

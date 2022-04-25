@@ -13,6 +13,9 @@ interface CountryItemDao {
     @Query("SELECT * FROM ConnCountryItem WHERE id = :first")
     fun findByID(first: Int): ConnCountryItem
 
+    @Query("SELECT COUNT(*) FROM ConnCountryItem")
+    fun findCount(): Int
+
     @Query("SELECT * FROM ConnCountryItem WHERE item_id = :first")
     fun findItemCountry(first: Int): List<ConnCountryItem>
 

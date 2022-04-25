@@ -13,6 +13,9 @@ interface GenreFilmDao {
     @Query("SELECT * FROM ConnGenreFilm WHERE id = :first")
     fun findByID(first: Int): ConnGenreFilm
 
+    @Query("SELECT COUNT(*) FROM ConnGenreFilm")
+    fun findCount(): Int
+
     @Query("SELECT * FROM ConnGenreFilm WHERE film_id = :first")
     fun findFilmGenres(first: Int): List<ConnGenreFilm>
 

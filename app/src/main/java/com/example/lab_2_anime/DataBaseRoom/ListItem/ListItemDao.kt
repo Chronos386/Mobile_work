@@ -13,7 +13,10 @@ interface ListItemDao {
     fun findByID(first: Int): ListItemDB
 
     @Query("SELECT * FROM ListItemDB WHERE kinopoiskID = :first")
-    fun findByKPID(first: Int): ListItemDB
+    fun findByKPID(first: Long): ListItemDB
+
+    @Query("SELECT COUNT(*) FROM ListItemDB")
+    fun findCount(): Int
 
     @Insert
     fun insert(item: ListItemDB)

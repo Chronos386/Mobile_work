@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.lab_2_anime.DataSource.ListItem
 import com.example.lab_2_anime.interf_components.GoToAnime3
 import com.example.lab_2_anime.R
+import com.example.lab_2_anime.interf_components.isOnline
 import com.squareup.picasso.Picasso
 
 
@@ -40,8 +41,10 @@ class SpisAdapter3(private val context: Context, private val list: ArrayList<Lis
         val str: String = data.year.toString() + " | " +
                 data.ratingKinopoisk.toString() + "/10"
         holder.spisInform.text = str
-        Picasso.get().load(data.posterURL).fit().placeholder(R.mipmap.ic_launcher).
-        into(holder.itemView.findViewById<ImageView>(R.id.image))
+        if(isOnline(context)){
+            Picasso.get().load(data.posterURL).fit().placeholder(R.mipmap.ic_launcher).
+            into(holder.itemView.findViewById<ImageView>(R.id.image))
+        }
         holder.itemView.setOnClickListener {
             MyOnClick.onClicked(data)
         }

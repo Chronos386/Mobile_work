@@ -13,6 +13,9 @@ interface GenreItemDao {
     @Query("SELECT * FROM ConnGenreItem WHERE id = :first")
     fun findByID(first: Int): ConnGenreItem
 
+    @Query("SELECT COUNT(*) FROM ConnGenreItem")
+    fun findCount(): Int
+
     @Query("SELECT * FROM ConnGenreItem WHERE item_id = :first")
     fun findItemGenres(first: Int): List<ConnGenreItem>
 

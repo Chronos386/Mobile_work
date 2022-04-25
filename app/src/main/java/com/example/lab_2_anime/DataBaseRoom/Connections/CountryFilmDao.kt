@@ -14,6 +14,9 @@ interface CountryFilmDao {
     @Query("SELECT * FROM ConnCountryFilm WHERE id = :first")
     fun findByID(first: Int): ConnCountryFilm
 
+    @Query("SELECT COUNT(*) FROM ConnCountryFilm")
+    fun findCount(): Int
+
     @Query("SELECT * FROM ConnCountryFilm WHERE film_id = :first")
     fun findFilmCountry(first: Int): List<ConnCountryFilm>
 

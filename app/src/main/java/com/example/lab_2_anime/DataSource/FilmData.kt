@@ -29,7 +29,7 @@ data class FilmData (
     val ratingGoodReview: Double? = null,
     val ratingGoodReviewVoteCount: Long? = null,
     val ratingKinopoisk: Double? = null,
-    val ratingKinopoiskVoteCount: Long,
+    val ratingKinopoiskVoteCount: Long?,
     val ratingImdb: Double? = null,
     val ratingImdbVoteCount: Double? = null,
     val ratingFilmCritics: Double? = null,

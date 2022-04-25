@@ -13,6 +13,8 @@ class MyButtons(private val id_butt_1: Int, private val id_butt_2: Int, cont: Co
         butt1 = MyView.findView(id_butt_1)
         butt2 = MyView.findView(id_butt_2)
         butt1.visibility = View.INVISIBLE
+        if(films.getCountPage() == 1.toLong())
+            butt2.visibility = View.INVISIBLE
         butt1.setOnClickListener {
             if(films.getPage() == films.getCountPage())
                 butt2.visibility = View.VISIBLE

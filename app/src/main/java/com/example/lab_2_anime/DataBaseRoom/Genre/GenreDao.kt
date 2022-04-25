@@ -12,6 +12,12 @@ interface GenreDao {
     @Query("SELECT * FROM GenreDB WHERE id = :first")
     fun findByID(first: Int): GenreDB
 
+    @Query("SELECT * FROM GenreDB WHERE name = :first")
+    fun findByName(first: String): GenreDB
+
+    @Query("SELECT COUNT(*) FROM GenreDB")
+    fun findCount(): Int
+
     @Insert
     fun insert(genre: GenreDB)
 
